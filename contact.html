@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skateboard TrainAR</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+
+<body class="is-boxed has-animations">
+    <div class="body-wrap-alt boxed-container">
+        <header class="site-header">
+
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+                                <img style="width: 100px; height: 100px;" src="./dist/images/app-icon.png" />
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="newsletter section text-light">
+                <div id="formkeep-embed"
+                    data-formkeep-url="https://formkeep.com/p/40e18f151b3738563839f03c777688d8?embedded=1"></div>
+
+                <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+                <script type="text/javascript"
+                    src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+
+                <!-- Get notified when the form is submitted, add your own code below: -->
+                <script>
+                    const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+                    formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+                        console.log('Submitting form...')
+                    })
+
+                    formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+                        console.log('Submitted form...')
+                    })
+                </script>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="dist/js/main.min.js"></script>
+</body>
+
+</html>
