@@ -22,6 +22,7 @@ export interface ImageProps extends Omit<HTMLAttributes<'img'>, 'src'> {
   widths?: number[] | null;
   aspectRatio?: string | number | null;
   objectPosition?: string;
+  objectFit?: string;
 }
 
 export type ImagesOptimizer = (
@@ -267,6 +268,7 @@ export async function getImagesOptimized(
     sizes,
     aspectRatio,
     objectPosition,
+    objectFit,
     widths,
     layout = 'constrained',
     style = '',
@@ -328,6 +330,7 @@ export async function getImagesOptimized(
         height: height,
         aspectRatio: aspectRatio,
         objectPosition: objectPosition,
+        objectFit: objectFit,
         layout: layout,
       })}${style ?? ''}`,
       ...rest,

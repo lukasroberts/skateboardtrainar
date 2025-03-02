@@ -17,6 +17,7 @@ import Image from '~/components/common/Image.astro';
 import Features from '~/components/widgets/Features.astro';
 import { getPermalink } from '~/utils/permalinks';
 import Steps2 from '~/components/widgets/Steps2.astro';
+import AppFeature from '~/components/widgets/AppFeature.astro';
 
 const appStoreImg = '~/assets/images/app-store.png';
 const appStoreDownloadLink = 'https://github.com/onwidget/astrowind';
@@ -68,13 +69,18 @@ const metadata = {
   
 
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">Sk8</span>: Log & Share Your Skateboarding<span
+      <span class="text-accent dark:text-white highlight">Sk8</span>: Capture & Share Your Skateboarding<span
         class="hidden xl:inline"></span
       >
     </Fragment>
 
-    <Fragment slot="subtitle">
+    <!-- <Fragment slot="subtitle">
       Record and log your skating, share it with the wider community, compete with the rest of the world for the dopest trick.
+    </Fragment> -->
+
+
+    <Fragment slot="subtitle">
+      An app for capturing and watching skateboarding. Add to your skateboarding diary, share it with the world when your ready, and start competing for the dopest trick.
     </Fragment>
 
     <Fragment slot="email">
@@ -103,6 +109,88 @@ const metadata = {
   </Hero2>
 
 
+  
+
+  <AppFeature
+  id="diary"
+  title="Skate Diary"
+  isReversed
+  subtitle="Capture and log your skateboarding journey in your skateboarding diary. Share key moments of your diary with the wider community. Sk8 will only allow you to log to your diary via recording in the app."
+  image={{
+    src: '~/assets/images/Diary Mockup.png',
+    alt: 'Tech Design Image',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Go to the project',
+    icon: 'tabler:chevron-right',
+    href: '#',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Project 1: <br /><span class="text-2xl">Clips</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</AppFeature>
+
+<AppFeature
+  id="diary"
+  title="Leaderboard"
+  
+  subtitle="View the best tricks of the week, see who is getting the most stoke of all time, and compete with the wider sk8 community for first place."
+  image={{
+    src: '~/assets/images/Leaderboard Mockup.png',
+    alt: 'Tech Design Image',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Go to the project',
+    icon: 'tabler:chevron-right',
+    href: '#',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Project 1: <br /><span class="text-2xl">Clips</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</AppFeature>
+
+<AppFeature
+    id="clips"
+    title="Clips"
+    subtitle="Catch up on Skateboarding and view an entire plethora of diverse tricks from a global network of Skateboarders. Give some stoke, and engage with the skateboarding community like never before."
+    isReversed
+    image={{
+      src: '~/assets/images/Reels Mockup.png',
+      alt: 'Tech Design Image',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: '#',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Project 1: <br /><span class="text-2xl">Clips</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </AppFeature>
 
 
 
@@ -121,22 +209,23 @@ const metadata = {
         icon: 'tabler:square-number-1',
       },
       {
-        title: 'Catch Up With The Latest Skateboarding',
-        description:
-          'View other peoples tricks, give some stoke, and engage with the skateboarding community like never before.',
-          icon: 'tabler:square-number-2',
-      }, 
-      {
         title: 'Practice & Record',
         description: 'Record your skateboarding to add to your diary, and optionally share it with the wider community. Sk8 only allows capture via recording in the app itself.',
-        icon: 'tabler:square-number-3',
+        icon: 'tabler:square-number-2',
       },
       {
         title: 'Check The Leaderboard',
         description:
           'Check who is getting the most stoke in the sk8 network and try and compete with them.',
-        icon: 'tabler:square-number-4',
+        icon: 'tabler:square-number-3',
       },
+      {
+        title: 'Catch Up With The Latest Skateboarding',
+        description:
+          'View other peoples tricks, give some stoke, and engage with the skateboarding community like never before.',
+          icon: 'tabler:square-number-4',
+      }, 
+
     ]}
 
   />
@@ -148,7 +237,7 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     items={[
       {
@@ -183,9 +272,12 @@ const metadata = {
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
     </Fragment>
-  </Content>
+  </Content> -->
 
 
+
+
+<!-- 
   <Prices
   title="Pro Plan"
   subtitle="For those who need it, back up your sk8 diary to the cloud, cancel anytime"
@@ -267,22 +359,22 @@ const metadata = {
       ribbonTitle: 'popular',
     },
   ]}
-/>
+/> -->
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
+  <!-- <Stats
     title="Statistics of our app"
     stats={[
       { amount: '20K', icon: 'tabler:download' },
       { amount: '18.5K', icon: 'tabler:users' },
       { amount: '4.7', icon: 'tabler:user-star' },
     ]}
-  />
+  /> -->
 
   <!-- Testimonials Widget *********** -->
 
-  <Testimonials
+  <!-- <Testimonials
     title="What our users say?"
     testimonials={[
       {
@@ -320,11 +412,11 @@ const metadata = {
       href: 'https://github.com/onwidget/astrowind',
       icon: 'tabler:chevron-right',
     }}
-  />
+  /> -->
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <!-- <FAQs
     title="Still have some doubts?"
     items={[
       {
@@ -352,7 +444,7 @@ const metadata = {
           'While the app itself contains a free plan, there is also a monthly paid plan which contains most of the features that will be beneficial to skateboarders who are starting out or improving.',
       },
     ]}
-  />
+  /> -->
 
   <ContactUs
   id="download"
@@ -375,7 +467,7 @@ const metadata = {
 
 <Steps2
 title="Reach out to us"
-subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
+subtitle="Have questions? Feel free to contact us using the form below."
 callToAction={{
   text: 'Get Notified',
   href: '/',
@@ -387,14 +479,9 @@ items={[
     icon: 'tabler:mail',
   },
   {
-    title: 'Call us',
-    description: '+1 (234) 567-890',
+    title: 'Social Media',
+    description: 'Instagram / TikTok',
     icon: 'tabler:headset',
-  },
-  {
-    title: 'Follow us',
-    description: '@example',
-    icon: 'tabler:brand-twitter',
   },
 ]}
 />
