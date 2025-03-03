@@ -18,6 +18,7 @@ import Features from '~/components/widgets/Features.astro';
 import { getPermalink } from '~/utils/permalinks';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import AppFeature from '~/components/widgets/AppFeature.astro';
+import { findImage } from '~/utils/images';
 
 const appStoreImg = '~/assets/images/app-store.png';
 const appStoreDownloadLink = 'https://github.com/onwidget/astrowind';
@@ -28,6 +29,8 @@ const googlePlayDownloadLink = 'https://github.com/onwidget/astrowind';
 const metadata = {
   title: 'Sk8 - Learn how to Skateboard',
 };
+
+const videoUrl = await findImage("/src/assets/images/reels.mp4")
 ---
 
 <Layout metadata={metadata}>
@@ -165,15 +168,14 @@ const metadata = {
   </Fragment>
 </AppFeature>
 
+
+
 <AppFeature
     id="clips"
     title="Clips"
     subtitle="Catch up on Skateboarding and view an entire plethora of diverse tricks from a global network of Skateboarders. Give some stoke, and engage with the skateboarding community like never before."
     isReversed
-    image={{
-      src: '~/assets/images/Reels Mockup.png',
-      alt: 'Tech Design Image',
-    }}
+    videoUrl={"/src/assets/images/reels.mp4"}
     callToAction={{
       target: '_blank',
       text: 'Go to the project',

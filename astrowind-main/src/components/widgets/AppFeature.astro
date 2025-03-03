@@ -15,6 +15,7 @@ const {
   items = [],
   columns,
   image = await Astro.slots.render('image'),
+  videoUrl = await Astro.slots.render('video'),
   isReversed = false,
   isAfterContent = false,
 
@@ -45,9 +46,10 @@ const {
           }}
         />
       </div>
-      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
-        {
-          image && (
+
+      {
+        image && (
+          <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
@@ -65,9 +67,23 @@ const {
                 <Image loading="eager" width={600} height={600} objectFit="contain" {...image} />
               )}
             </div>
-          )
-        }
-      </div>
+          </div>
+        )
+      }
+
+      {
+        videoUrl && (
+          <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
+            {
+              <div class="relative m-auto max-w-4xl">
+                  <video class="h-200 w-200 rounded-lg" autoplay loop muted>
+                    <source src={'/src/assets/images/reels-480p.mp4'} type="video/mp4" />
+                  </video>
+              </div>
+            }
+          </div>
+        )
+      }
     </div>
   </div>
 </WidgetWrapper>
